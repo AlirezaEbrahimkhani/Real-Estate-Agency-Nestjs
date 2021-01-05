@@ -33,14 +33,14 @@ export class HouseService {
     return house;
   }
 
-  async deleteProduct(houseID) {
+  async deleteHouse(houseID) {
     const result = await this.houseModel.deleteOne({ _id: houseID }).exec();
     if (result.n === 0) {
-      throw new NotFoundException('Could not find product.');
+      throw new NotFoundException('Could not find House.');
     }
   }
 
-  async updateProduct(
+  async updateHouse(
     houseId: string,
     name: string,
     desc: string,

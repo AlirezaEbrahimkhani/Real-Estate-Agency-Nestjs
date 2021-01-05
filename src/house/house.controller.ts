@@ -41,18 +41,18 @@ export class HouseController {
 
   @Delete(':id')
   async removeHouse(@Param('id') houseID: string) {
-    await this.houseService.deleteProduct(houseID);
+    await this.houseService.deleteHouse(houseID);
     return null;
   }
 
   @Patch(':id')
-  async updateProduct(
+  async updateHouse(
     @Param('id') houseId: string,
     @Body('name') houseName: string,
     @Body('description') houseDesc: string,
     @Body('price') housePrice: number,
   ) {
-    await this.houseService.updateProduct(
+    await this.houseService.updateHouse(
       houseId,
       houseName,
       houseDesc,
